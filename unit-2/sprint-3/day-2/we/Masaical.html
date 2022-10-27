@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>
+            Masai Calculator
+        </title>
+        <style>
+            h2{
+                text-align: center;
+                color: teal;
+            }
+            #container{
+                width: 30%;
+                border-radius: 10px;
+                border: 1px solid transparent;
+                
+                box-shadow: -3px 0px 19px 0px #0000004d;
+
+                 box-shadow: -3px 0px 19px 0px #0000004d;
+                 margin: auto;
+                padding: 25px;
+                height: 400px;
+               
+               
+
+            }
+            .box{
+                width: 80%;
+                height:13%;
+                border: 1px solid transparent;
+                border-radius: 10px;
+                box-shadow: -3px 0px 19px 0px #0000004d;
+
+                 box-shadow: -3px 0px 19px 0px #0000004d;
+                 margin: auto;
+                 font-size: 30px;
+                 display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow:scroll ;
+            }
+            #box{
+                width: 80%;;
+                height: 80%;
+                border: 1px solid transparent;
+                margin-top: 15px;
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: repeat(4,1fr);
+                gap: 5px;
+                padding: 10px;
+                border-radius: 10px;
+                margin: auto;
+               
+
+            }
+            #box>div{
+               
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                border-radius: 10px;
+                font-size: 25px;
+                box-shadow: -3px 0px 19px 0px #0000004d;
+
+                box-shadow: -3px 0px 19px 0px #0000004d;
+            }
+            .col{
+                background-color: black;
+                color: white;
+            }
+            #blu{
+                background-color: red;
+                color: white;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h2>MASAI CALCULATOR</h2>
+        <div id="container">
+            <div class="box"></div>
+            <div id="box">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div class="col">+</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div class="col">-</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div class="col">*</div>
+                <div id="blu">c</div>
+                <div >0</div>
+                <div class="col">=</div>
+                <div class="col">/</div>
+               
+            </div>
+
+        </div>
+    </body>
+</html>
+<script>
+
+   let x= document.querySelectorAll("#box>div")
+   let bag="";
+   console.log(x.length)
+   for (let i=0;i<x.length;i++){
+       x[i].addEventListener("click",calculation );
+       function calculation(event){
+           let targetNumber=event.target.innerText;
+          
+          console.log(targetNumber)
+          if(targetNumber=="c"){
+              bag="";
+            document.querySelector(".box").innerText="";
+
+          }else if(targetNumber== "="){
+              if(bag==""){
+                  document.querySelector(".box").innerText="";
+              }else{
+                console.log(eval(bag))
+            
+            document.querySelector(".box").innerText=eval(bag); 
+
+              }
+              
+          }
+             else{
+              bag=bag+targetNumber;
+            
+            document.querySelector(".box").innerText=bag; 
+          }
+
+       }
+   }
+</script> 
