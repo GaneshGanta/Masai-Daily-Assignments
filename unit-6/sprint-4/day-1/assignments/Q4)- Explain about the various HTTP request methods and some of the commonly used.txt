@@ -1,0 +1,70 @@
+Q4- Explain the various HTTP request methods and some of the commonly used HTTP response status codes.
+
+
+HTTP request methods:
+====================
+
+a) GET: The requested resource has been transmitted in the response together with the message body.
+
+b) HEAD: The representation headers are transmitted in the response without any message body.
+
+c) POST: The resource describing the result of the action is transmitted in the response.
+
+d) TRACE: The response contains the request message as received by the server.
+
+
+
+HTTP response status codes:
+**************************
+
+a)201 Created
+
+This status code indicates that the request has succeeded and has resulted in the creation of a new resource. 
+The server will have to create the resource before returning the 201. The new resource is returned in the body of the message, 
+and it can be located either at the URI of the request, or at the content of the Location header.
+
+b)202 Accepted
+
+This status code indicates that the request has been accepted for processing, and the processing has not been completed or started. 
+The request may or may not be acted upon, as it might be disallowed when processing actually takes place.
+
+c)404 Not Found
+
+This status code indicates that the server can’t find anything matching the Request-URI. Links that lead to a 404 page are often 
+called broken or dead links and can be subject to link rot.
+
+d)408 Request Timeout
+
+This status code indicates that the server would like to shut down this unused connection because the request exceeded the time 
+that the server was prepared to wait.
+
+
+e)500 Internal Server Error
+
+This status code indicates that the server encountered an unexpected condition that prevented it from fulfilling the request. 
+This error response is usually used as a generic “catch-all” response indicating that the server cannot find a better 5xx status code to respond.
+
+
+f)502 Bad Gateway
+
+This status code indicates that the server while acting as a gateway or proxy, received an invalid response from the upstream server in 
+attempting to fulfill the request. A 502 code is not something you can fix but requires a fix by the web server or the proxies you are 
+trying to get access through.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

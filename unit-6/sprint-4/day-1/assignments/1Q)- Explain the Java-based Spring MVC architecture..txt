@@ -1,0 +1,32 @@
+1Q) What is MVC architecture in Java?
+
+*The model designs based on the MVC architecture follow MVC design pattern. The application logic is separated from the user 
+ interface while designing the software using model designs.
+
+*The MVC pattern architecture consists of three layers :
+ 
+a) Model: It represents the business layer of an application. It is an object to carry the data that can also contain 
+          the logic to update the controller if data is changed.
+
+b)View: It represents the presentation layer of an application. It is used to visualize the data that the model contains.
+
+c)Controller: It works on both the model and view. It is used to manage the flow of applications, i.e. data flow in the 
+              model object and update the view whenever data is changed.
+
+
+
+*In Java Programming, the Model contains the simple Java classes, the View used to display the data and the Controller contains the servlets. 
+ Due to this separation, the user requests are processed as follows:
+
+MVC Architecture in Java:
+======================== 
+
+*A client (browser) sends a request to the controller on the server side, for a page.
+
+*The controller then calls the model. It gathers the requested data.
+
+*Then the controller transfers the data retrieved to the view layer.
+
+*Now the result is sent back to the browser (client) by the view.
+
+

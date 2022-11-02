@@ -1,0 +1,19 @@
+Q3- What is the difference between WebApplication and Web-services
+
+Web Application :
+***************
+
+A Web application, or Web app, is a Web site that allows users to access and interact with software from any computer or device 
+that is connected to the Internet. Users often interact with Web applications directly at the Web site, referred to as the host,
+through their Web browser. Some Web sites, however, require you to download the software to your local computer or device. Web 
+application hosts often store users’ data and information on their servers. Some Web applications provide users with an option 
+of storing data locally on their own personal computer or mobile device.
+
+
+
+Web Services :
+************
+Web services describe standardized software that enables programmers to create applications that communicate with other remote 
+computers over the Internet or over an internal business network. Businesses are the primary users of Web services because this 
+technology provides a means for departments to communicate with each other, suppliers, vendors, and with clients. For example, 
+third-party vendors can use Web services to communicate with their online retailer’s Web site to manage their inventory levels.

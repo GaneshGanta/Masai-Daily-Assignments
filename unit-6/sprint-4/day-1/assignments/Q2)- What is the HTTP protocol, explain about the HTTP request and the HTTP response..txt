@@ -1,0 +1,64 @@
+Q2- What is the HTTP protocol, explain about the HTTP request and the HTTP response.
+
+
+*HTTP stands for HyperText Transfer Protocol. This is a basis for data communication in the internet. The data communication 
+  starts with a request sent from a client and ends with the response received from a web server.
+
+*A website URL starting with “http://” is entered in a web browser from a computer (client). The browser can be a Chrome, Firefox, 
+ Edge, Safari, Opera or anything else.
+
+*Browser sends a request sent to the web server that hosts the website.
+
+*The web server then returns a response as a HTML page or any other document format to the browser.
+
+*Browser displays the response from the server to the user.
+
+
+
+***HTTP Request :
+   ============
+
+
+A simple request message from a client computer consists of the following components:
+
+*A request line to get a required resource, for example, a request GET /content/page1.html is requesting a resource 
+ called /content/page1.html from the server.
+
+*Headers (Example – Accept-Language: EN).
+
+*An empty line.
+
+*A message body that is optional.
+
+
+
+
+***HTTP Response :
+   =============
+
+A simple response from the server contains the following components:
+
+*HTTP Status Code (For example HTTP/1.1 301 Moved Permanently, means the requested resource was permanently 
+ moved and redirected to some other resource).
+
+*Headers (Example – Content-Type: html)
+
+*An empty line.
+
+*A message body which is optional.
+
+All the lines in the server response should end with a carriage return and line feed. Similar to the request, the empty 
+line in a response also should only have carriage return and line feed without any spaces.
+
+
+
+
+
+
+
+
+
+
+
+
+
