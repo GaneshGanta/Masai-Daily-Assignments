@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U2C3 Mock</title>
+    <style>
+      #report{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+      }#report>div{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <select id="month">
+        <option value="January">JANUARY</option>
+        <option value="February">FEB</option>
+        <option value="MARCH">MARCH</option>
+        <option value="APRIL">APRIL</option>
+        <option value="MAY">MAY</option>
+        <option value="JUNE">JUNE</option>
+        <option value="JULY">JULY</option>
+        <option value="AUGUST">AUGUST</option>
+        <option value="SEPETEMBER">SEPETEMBER</option>
+        <option value="OCTOBER">OCTOBER</option>
+        <option value="NOVEMBER">NOVEMBER</option>
+        <option value="DECEMBER">DECEMBER</option>
+      </select>
+
+      <input id="income" type="number" placeholder="Enter Income" />
+
+      <input id="expense" type="number" placeholder="Enter expense" />
+
+      <input type="submit" /> 
+    </form>
+
+    <div id="report">
+          <!-- Append your cards here -->
+    </div>
+  </body>
+</html>
+
+<script>
+  document.querySelector("form").addEventListener("submit",perform);
+  
+
+
+   function perform(){
+     event.preventDefault()
+     let main=document.createElement("div")
+
+  let head=document.createElement("h1");
+  let para=document.createElement("p");
+  let para1=document.createElement("p")
+  let head3=document.createElement("h3");
+  let btn=document.createElement("button");
+    let mon=document.querySelector("#month").value;
+    let gain=document.querySelector("#income").value;
+    let loss=document.querySelector("#expense").value;
+    head.innerText=mon;
+    para.innerText=gain;
+    para1.innerText=loss;
+    if(+gain < +loss){
+      head3.innerText="DEBT"
+      head3.style.color="red";
+    }else if(+gain > +loss){
+      head3.innerText="SAVE";
+      head3.style.color="green";
+    }else {
+      head3.innerText="BREAKEVEN";
+      head3.style.color="orange";
+    }
+
+    btn.innerText="Delete";
+    btn.addEventListener("click",del);
+     
+   main.append(head,para,para1,head3,btn);
+   document.querySelector("#report").append(main)
+
+   }
+   function del(event){
+     event.target.parentNode.remove();
+     console.log(12)
+   }
+  
+</script>

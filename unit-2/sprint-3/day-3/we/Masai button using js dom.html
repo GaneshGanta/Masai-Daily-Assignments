@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(9,1fr);
+            gap: 10px;
+
+        }
+        button{
+            border: none;
+            padding: 15px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let arr=[ 
+        {text:"primary",bgColor:"red", color:"white"},
+        {text:"Secondary",bgColor:"green", color:"white"},
+        {text:"Danger",bgColor:"grey", color:"white"},
+        {text:"Warning",bgColor:"yellow", color:"black"},
+        {text:"Info",bgColor:"cyan", color:"white"},
+        {text:"Light",bgColor:"white", color:"black"},
+        {text:"Success",bgColor:"green", color:"white"},
+        {text:"Dark",bgColor:"black", color:"white"},
+        {text:"Link",bgColor:"white", color:"black"},
+    ];
+    
+   for (let i =0;i<arr.length;i++){
+    let box=document.createElement("button");
+    box.innerText=arr[i].text;
+    box.style.color=arr[i].color;
+    box.style.backgroundColor=arr[i].bgColor;
+   
+    document.querySelector("#container").append(box);
+    }
+</script>
