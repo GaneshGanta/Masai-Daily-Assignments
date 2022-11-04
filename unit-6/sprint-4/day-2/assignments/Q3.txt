@@ -1,0 +1,16 @@
+3Q)Explain the difference between SOAP and REST.
+
+1)The SOAP essentially uses WSDL more specifically XML specification for its definition and function.
+  On the other hand, REST can support formats, such as JSON, XML, etc.
+
+2)SOAP provides a standard and is considered a protocol while REST does not build new standards and 
+  uses existing standards as REST is just an architectural style.
+
+
+3)The size of the messages in REST is smaller and it also consumes less bandwidth because it just needs a 
+  JSON body with an HTTP connection for writing the request to the client, unlike SOAP. As against, 
+  SOAP contains large-size messages which take a lot of bandwidth.
+
+
+4)SOAP client and server are tightly coupled where any feature extension and alteration may not be possible or difficult. 
+  Conversely, in REST the client and server have a loose coupling and can easily adapt to change.

@@ -1,0 +1,30 @@
+Q1/- What is a Servlet ? What is the role of the DispatcherServlet in the Spring boot rest application?
+
+A:
+
+Java Servlets are programs that run on a Web or Application server and act as a middle layer between a request coming from a Web browser 
+or other HTTP clients and databases or applications on the HTTP server. Using Servlets, you can collect input from users through web page forms,
+present records from a database or another source, and create web pages dynamically.
+
+Servlets perform the following major tasks:
+******************************************
+
+*Read the explicit data sent by the clients (browsers). This includes an HTML form on a Web page or it could also come from an applet 
+ or a custom HTTP client program.
+
+*Read the implicit HTTP request data sent by the clients (browsers). This includes cookies, media types and compression schemes the 
+ the browser understands, and so forth.
+
+*Process the data and generate the results. This process may require talking to a database, executing an RMI or CORBA call, invoking a Web service, 
+ or computing the response directly.
+
+
+role of the DispatcherServlet in the Spring boot rest application:
+*****************************************************************
+
+=>DispatcherServlet acts as the Front Controller for Spring-based web applications.  So it is pretty simple. Any request is going to come into our 
+    website the front controller is going to stand in front and is going to accept all the requests and once the front controller accepts that request 
+   then this is the job of the front controller that it will make a decision that who is the right controller to handle that request. For example, refer to 
+   the below image. Suppose we have a website called student.com and the client is make a request to save student data by hitting the following URL student.com/save 
+ its first comes to the front controller and once the front controller accepts that request it is going to assign to the Controller_1 as this controller handle the 
+   request for /save operation. Then it is going to return back the response to the Client. 

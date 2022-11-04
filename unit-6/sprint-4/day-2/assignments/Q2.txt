@@ -1,0 +1,21 @@
+Q2/- Explain the difference between Spring-MVC and Spring Boot.
+
+
+              
+
+				SPRING MVC 	                                                                SPRING BOOT
+
+1)This framework requires a lot of configurations, such as                         1)Spring Boot handles the configurations automatically with its 
+  DispatcherServlet configurations and View Resolver configurations.			 Auto-configuration feature.
+
+
+2)A deployment descriptor is required for the Spring MVC framework.                2)A deployment descriptor is not required for the Spring BOOT.
+	
+
+3)Every dependency needs to be specified separately for the features to run.       3)Spring Booth has the concept of starters, once it is added to the 
+                                                                                     classpath, it will bring all the dependencies needed for developing 
+                                                                                     a web application.	
+
+
+4)The four components of Spring MVC are Model, View, Controller,                   4)The four layers of Spring Boot are the Presentation layer, Business 
+   and Front Controller (DispatcherServlet class).			                   layer, Persistence layer, and Database layer. 																						
