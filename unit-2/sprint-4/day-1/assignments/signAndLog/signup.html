@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       #main{
+           width: 30%;
+           border: 1px solid red;
+           margin: auto;
+           padding: 20px;
+       }input{
+           width: 100%;
+       }div{
+           border: 1px solid brown;
+           margin: 10px;
+       }#log{
+           border: 1px solid transparent;
+       }
+   </style>
+</head>
+<body>
+    <div id="main">
+        <p>Enter Name</p>
+        <input type="text" placeholder="Enter Name" id="name">
+        <p>Email</p>
+        <input type="text" placeholder="Email" id="mail">
+        <p>Password</p>
+        <input type="password" placeholder="Password" id="pass">
+        <div id="sign">signup</div>
+        <div id="log"> </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    document.querySelector("#sign").addEventListener("click",perf);
+    let arrObj=JSON.parse(localStorage.getItem("userInfo"))||[];
+    console.log(arrObj)
+    function perf(){
+      
+        let obj= {
+            naam : document.querySelector("#name").value,
+            male : document.querySelector("#mail").value,
+            paas :document.querySelector("#pass").value,
+            
+        };
+        arrObj.push(obj);
+        localStorage.setItem("userInfo",JSON.stringify(arrObj));
+        let anchor=document.createElement("a")
+        anchor.innerText="login";
+         anchor.setAttribute("href","login.html");
+         document.querySelector("#log").style.border="1px solid red";
+        document.querySelector("#log").append(anchor);
+
+        
+    }
+
+</script>

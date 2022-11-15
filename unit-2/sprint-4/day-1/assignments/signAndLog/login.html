@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+          width: 30%;
+          margin: auto;
+          border: 1px solid pink;
+          padding: 20px;
+        }input{
+            width: 100%;
+        }div{
+            border: 1px solid red;
+        }#box{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <p>enter Email</p>
+        <input type="text" placeholder="Enter Email" id="peru">
+        <p>Enter Password</p>
+        <input type="text" placeholder="Enter Password" id="secure">
+        <div id="box">Log In</div>
+
+    </div>
+    
+</body>
+</html>
+<script>
+    document.querySelector("#box").addEventListener("click",activ);
+    let arrOfObj=JSON.parse(localStorage.getItem("userInfo"));
+
+    function activ(){
+        // console.log(JSON.parse(localStorage.getItem("userInfo")))
+        let Name=document.querySelector("#peru").value;
+        let codes=document.querySelector("#secure").value;
+        let count=0;
+        for(let i=0;i<arrOfObj.length;i++){
+           if(arrOfObj[i].male==Name && arrOfObj[i].paas==codes){
+               count++;
+               break;
+           }
+       }if(count>0){
+           alert("login successful")
+       }else{
+           alert("No match found")
+       }
+
+        
+
+    }
+</script>
