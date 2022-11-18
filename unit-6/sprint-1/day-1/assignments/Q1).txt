@@ -1,0 +1,75 @@
+Q1/ Explain the Build process of the Java Application, How the Maven helps in the application build?
+
+
+
+***Build Process in java based project/application management:
+--------------------------------------------------------------------------
+
+develpers duty/responsibility to develop a java based business application:
+
+1. write some source code(bunch of classes, inteface...) 
+
+2.add some external  jarfiles to the classpath (dependencies of our application)
+in JDBC dao project, driver jar file is the dependency of our project.
+
+3.compile the code.
+
+4.prepare some test cases. (Unit test, Junit, Mockito, Sonar ) 
+
+5.add Junit/mockito related jar files inside the classpath
+
+6.compile  and run the test cases.
+
+7.arrange our code in a standard folder structure
+
+Java based Webapplication:
+----------------------------------
+
+*.java
+*.class
+*.jar
+*.html
+*.css
+*.js
+*.xml files
+*.mp3, mp4, jpg, gif 
+
+8.Do the packaging by building the jar, war file. 
+
+9.deploy this jar file/ war file to the server.
+
+
+***How the Maven helps in the application build :
+
+
+1. Maven has the capabilities of donwloading the required jar files from internet automatically.
+
+2. It can prepare,compile and run the test cases automatically.
+
+3. With the help of pom.xml file adding the dependencies become easier with Maven tool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

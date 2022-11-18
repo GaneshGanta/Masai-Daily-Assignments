@@ -1,0 +1,28 @@
+Q2/- What is the POM, Explain the basic properties of the pom.xml file in Maven based application.
+
+
+*A Project Object Model or POM is the fundamental unit of work in Maven. 
+
+*It is an XML file that contains information about the project and configuration details used by Maven to build the project.
+ 
+*It contains default values for most projects. Examples of this is the build directory, which is the "target", the source directory, 
+ which is src/main/java; the test source directory, which is src/test/java; and so on. 
+
+*When executing a task or goal, Maven looks for the POM in the current directory. 
+
+*It reads the POM, gets the needed configuration information, then executes the goal.
+
+
+
+***Basic properties of the pom.xml file in Maven-based application :
+
+1. Name.
+
+2. version.
+
+3. packaging (jar, war, ear).
+
+4. dependencies: required jar files.
+
+5. plugins will enhance the functionality of our project.
+
