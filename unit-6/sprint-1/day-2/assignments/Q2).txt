@@ -1,0 +1,21 @@
+Q2/- Differentiate between Hibernate and JPA.
+
+
+
+Key Differences Between Hibernate and JPA: 
+
+
+1)JPA is a set of a specification for which implementation is provided in Hibernate.
+
+
+2)JPA is a standard, while Hibernate is not a standard tool that is ORM platform dependent.
+
+
+3)In hibernate, we use Session for handling the persistence of data, 
+  
+  while in JPA, we use Entity Manager.
+  
+4)The query language in Hibernate is Hibernate Query language, 
+
+  while in JPA, the query language is Java Persistence query language.
+   

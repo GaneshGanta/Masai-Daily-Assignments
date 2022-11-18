@@ -1,0 +1,24 @@
+Q4/-Explain about the ORM, what are the benefits of the ORM approach over the JDBC approach.
+
+
+A: Object Relational Mapping provides an abstraction on JDBC by allowing directly java objects to store with the relational table.
+   
+   In simple, mapping of the java object with a database table is called Object-Relational-Mapping.Each row is considered as 
+   
+   a Java Object and fields of the java object are defined as columns in the table.If any update occurs in the Java object
+   
+   it will reflect in the Database as well and vice versa.
+
+
+Advantages of the ORM approach over the JDBC approach :
+
+a)we can directly store the state of an object of a java class with the database software.
+
+b)Boilerplate code issues for developers are resolved or simplified.
+
+c)It will not throw checked exceptions so no need to handle them.
+
+d)ORM based persistence logic is platform Independent, unlike JDBC.
+
+e)It will generate fine-tuned queries internally.
+

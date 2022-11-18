@@ -1,0 +1,33 @@
+Q1/- Limitation of JDBC-based persistence logic over the ORM.
+
+A:
+
+1)  With Jdbc we cannot map our object of Java class directly with a relational table.
+
+
+2). JDBC can't store the java objs into the table directly,becoz SQL queries do not allow the java objs as input,
+
+    here we need to convert obj data into the simple value to store them in a Data Base.
+
+
+3) JDBC code is the Data Base dependent code becoz it uses  DB s/w dependent queries. so our JDBC-based persistence
+ 
+   logic is not 100% portable across various DB s/w.
+
+
+4).jdbc code having boilerplate code problem (writing the same code except for SQL queries in multiple classes of our application again and again).
+
+   JDBC code throws lots of checked exceptions, the programmer needs to handle them.
+
+
+
+6). After the select operation, we get the ResultSet object, this Result List object we can not transfer from one layer 
+   
+    to another layer and to get the data from the ResultSet we need to know the structure of the ResultSet.
+
+
+7) JDBC does not maintain transaction management and there is no caching mechanism.
+
+
+
+

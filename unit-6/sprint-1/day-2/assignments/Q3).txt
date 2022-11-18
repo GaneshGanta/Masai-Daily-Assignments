@@ -1,0 +1,19 @@
+Q3/- What is the Difference between the Java Bean class and the POJO class?
+
+
+                           POJO CLASS                                                           JAVA BEAN
+
+
+a)It doesn’t have special restrictions other than those forced,                 a)It is a special POJO that has some restrictions.
+  by Java language.
+
+b)Every POJO class is not a Java Bean.                                          b)Every Java Bean is a POJO Class.
+
+c)Fields can be accessed by their names.                                        c)Fields are accessed only by getters and setters.
+
+d)Fields can have any visibility.                                               d)Fields can have private visibility.
+
+e)There may/may not be a no-arg constructor.	                                e)It must have a no-arg constructor.
+
+f)It is used when you don’t want to give restrictions, on your                   f)It is used when you want to provide users your entity but only
+   members and give the user complete access to your entity.                       some part of your entity.      
