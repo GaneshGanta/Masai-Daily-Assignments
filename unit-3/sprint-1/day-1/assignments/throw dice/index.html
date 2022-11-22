@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #winner{
+        width: 400px;
+        border: 1px solid black;
+        margin: auto;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(21, 20, 20);
+       font-weight: bold;
+        
+      }#members{
+        display: flex;
+       width: 70%;
+       margin: auto;
+       margin-top: 60px;
+       color: rgb(21, 20, 20);
+       font-weight: bold;
+      
+      }#member-1{
+        width: 30%;
+        height: 100px;
+        margin: auto;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }#member-2{
+        width: 30%;
+        height: 100px;
+        margin: auto;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }#member-3{
+        width: 30%;
+        height: 100px;
+        margin: auto;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }button{
+        display: block;
+        margin: auto;
+        margin-top: 50px;
+      }
+
+
+    </style>
+</head>
+<body>
+    <div id="winner"></div>
+
+    <div id="members">
+        <div id="member-1"></div>
+        <div id="member-2"></div>
+        <div id="member-3"></div>
+        
+    </div>
+    <button id="roll" >Roll The Dice</button>
+</body>
+</html>
+<script>
+
+    document.getElementById("roll").addEventListener("click",random)
+
+    function random(){
+        document.querySelector("#winner").style.backgroundColor="green";
+        
+        let one=Math.floor(Math.random() * (6-1+1))+1;
+        let a=document.querySelector("#member-1"); 
+        let x=a.textContent=one;
+        let two=Math.floor(Math.random() * (6-1+1))+1;
+        let b= document.querySelector("#member-2");
+        let y=b.textContent=two;
+        let three=Math.floor(Math.random() * (6-1+1))+1;
+        let c= document.querySelector("#member-3");
+        let z=c.textContent=three;
+        let A=document.querySelector("#winner")
+
+        if(+x>+y&&+x>+z){
+          if(+y>+z){
+            A.textContent="winner is member-1";
+            a.style.backgroundColor="green";
+            b.style.backgroundColor="yellow";
+            c.style.backgroundColor="red";
+
+          }else if(+y<+z){
+            A.textContent="winner is member-1";
+            a.style.backgroundColor="green";
+            b.style.backgroundColor="red";
+            c.style.backgroundColor="yellow";
+
+
+          }else if(y==z){
+            A.textContent="winner is member-1";
+            a.style.backgroundColor="green";
+            b.style.backgroundColor="blue";
+            c.style.backgroundColor="blue";
+
+          }
+           
+           
+         }
+         else if(+y>+x && +y>+z){
+            if(+x>+z){
+            A.textContent="winner is member-2";
+            b.style.backgroundColor="green";
+            a.style.backgroundColor="yellow";
+            c.style.backgroundColor="red";
+
+          }else if(+x<+z){
+            A.textContent="winner is member-2";
+            b.style.backgroundColor="green";
+            a.style.backgroundColor="red";
+            c.style.backgroundColor="yellow";
+
+
+          }else if(x==z){
+            A.textContent="winner is member-2";
+            b.style.backgroundColor="green";
+            a.style.backgroundColor="blue";
+            c.style.backgroundColor="blue";
+
+          }
+            
+        } 
+        else if(z>x && z>y){
+
+            if(+x>+y){
+            A.textContent="winner is member-3";
+            c.style.backgroundColor="green";
+            a.style.backgroundColor="yellow";
+            b.style.backgroundColor="red";
+
+          }else if(+x<+y){
+            A.textContent="winner is member-3";
+            c.style.backgroundColor="green";
+            a.style.backgroundColor="red";
+            b.style.backgroundColor="yellow";
+
+
+          }else if(x==y){
+            A.textContent="winner is member-3";
+            c.style.backgroundColor="green";
+            a.style.backgroundColor="blue";
+            b.style.backgroundColor="blue";
+
+          }
+           
+        }else if(+x==+y&&+y==+z){
+            A.textContent="all are winners";
+            c.style.backgroundColor="blue";
+            a.style.backgroundColor="blue";
+            b.style.backgroundColor="blue";
+
+        }else if(+x==+y&&+x>+z){
+          A.textContent=" winners are member-1 and member-2";
+            c.style.backgroundColor="red";
+            a.style.backgroundColor="green";
+            b.style.backgroundColor="green";
+
+        }
+        else if(+x==+z&&+x>+y){
+          A.textContent=" winners are member-1 and member-3";
+            c.style.backgroundColor="green";
+            a.style.backgroundColor="green";
+            b.style.backgroundColor="red";
+
+        }else if(+y==+z&&+y>+x){
+          A.textContent=" winners are member-2 and member-3";
+            c.style.backgroundColor="green";
+            a.style.backgroundColor="red";
+            b.style.backgroundColor="green";
+
+        }
+       
+
+    }
+
+</script>
