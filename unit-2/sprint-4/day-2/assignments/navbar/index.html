@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <style>
+     #navbar{
+       border: 1px solid red;
+       display: flex;
+       background-color: black;
+       border-radius: 10px;
+       justify-content: space-evenly;
+
+
+     }div{
+         color: aliceblue;
+     }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <p id="men">Men</p>
+        <P id="women">Women</P>
+        <p id="log">signup</p>
+        <p id="signIn">signIn</p>
+        
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let arr=JSON.parse(localStorage.getItem("logIn"));
+    document.querySelector("#log").addEventListener("click",loginPage);
+    function loginPage(){
+        window.location.href="signUp.html";
+    }
+
+    document.querySelector("#signIn").addEventListener("click",signature);
+   
+    function signature(){
+        window.location.href="signIn.html";
+    }
+    document.querySelector("#men").addEventListener("click",mens);
+   
+   function mens(){
+       if(arr.length>0){
+       window.location.href="mens.html";
+       }else {
+           alert("please login")
+           window.location.reload()
+       }
+    
+   }
+
+   document.querySelector("#women").addEventListener("click",womens);
+   function womens(){
+       if(arr.length>0){
+       window.location.href="womenspage.html";
+
+       }else{
+           alert("please login")
+           window.location.reload()
+       }
+    console.log(arr)
+   }
+
+</script>

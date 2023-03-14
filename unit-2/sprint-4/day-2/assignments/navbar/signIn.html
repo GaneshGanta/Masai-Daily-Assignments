@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+</head>
+<body>
+    <div>
+        <form>
+            
+            <input type="email"  id="email" placeholder="email">
+            <input type="password"  id="key" placeholder="password" >
+            <button>SignIn</button>
+        </form>
+    </div>  
+    
+</body>
+</html>
+<script>
+    let form=document.querySelector("form");
+    let str=[];
+    let user=JSON.parse(localStorage.getItem("userData"));
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let input={
+            emails:document.querySelector("#email").value,
+            passwd:document.querySelector("#key").value,
+        };
+        if (checkSignin(input.emails, input.passwd) === true){
+            alert("sign in successful");
+            str.push(input)
+            localStorage.setItem("logIn",JSON.stringify(str));
+            window.location.href="mens.html";
+           // window.location.href="womens.html";
+        }else {
+            alert("username or email or password is wrong")
+        }
+    })
+    function checkSignin(email,pass){
+       let filters = user.filter(function(element){
+            return element.email==email && element.pass==pass;
+           
+        })
+        console.log(filters)
+        
+        if(filters.length>0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+</script>

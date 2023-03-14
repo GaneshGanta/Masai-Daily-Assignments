@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CartItems</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }div{
+            text-align: center;
+        }#box{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h3> </h3>
+        <h2></h2>
+        <input type="text" placeholder="enterpromo" id="promo">
+        <button id="apply">apply</button>
+    </div>
+   
+    
+    <div id="main">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let items=JSON.parse(localStorage.getItem("cartItems"));
+    let tP=JSON.parse(localStorage.getItem("totalprice")); 
+    display(items);
+
+   // let totalPrice=0;
+   let count=items.length;
+    function display(items){
+        let totalPrice=0;
+        let count=0;
+        document.querySelector("#main").innerHTML="";
+        items.forEach(function(elem,index){
+           
+            totalPrice+= +elem.price;     
+       let box=document.createElement("div");
+       let brand=document.createElement("h3");
+       brand.innerText=elem.brand;
+       let pic=document.createElement("img");
+       pic.setAttribute("src",elem.image_url);
+       let head=document.createElement("p");
+       head.innerText=elem.name;
+       let head1=document.createElement('p');
+       head1.innerText=elem.price;
+       let add=document.createElement("button")
+       add.innerText="+";
+       add.addEventListener("click",function(){
+        addition(elem)
+       })
+          
+       let btn=document.createElement("button")
+       btn.innerText=elem.strikedoffprice;
+       let cart=document.createElement("button");
+       cart.innerText="DELETE"
+       cart.style.display="block"
+       cart.style.margin=" 3px auto"
+        
+       cart.addEventListener("click",function(){
+           deleteed(index)
+       })
+       box.append(pic,brand,head,head1,btn,add,cart)
+       document.querySelector("#main").append(box)
+         })
+         localStorage.setItem("totalprice",JSON.stringify(totalPrice))
+        document.querySelector("h3").innerText="Total Price :" +" "+ totalPrice;
+        document.querySelector("h2").innerText="items are :"+" "+items.length;
+       
+       
+    }
+    
+      function deleteed(index){
+       items.splice(index,1)
+      // console.log(items)
+       localStorage.setItem("cartItems",JSON.stringify(items))
+       display(items)
+       window.location.reload()
+     
+
+      }
+      document.querySelector("#apply").addEventListener("click",perf)
+      function perf(){
+        let promo= document.querySelector("#promo");
+     if(promo.value=="masai30"){
+         let discount=Math.floor(tP-(tP*30)/100); 
+        document.querySelector("h3").innerText=discount; 
+     }else {
+         alert("promo not valid");
+     }
+   
+      }
+
+      function addition (el){
+            items.push(el)
+            //localStorage.removeItem("cartItems");
+         localStorage.setItem("cartItems",JSON.stringify(items))
+         display(items)
+         
+        }
+    
+     
+</script>
