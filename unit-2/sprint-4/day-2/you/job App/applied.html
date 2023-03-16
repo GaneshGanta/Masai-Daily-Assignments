@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+    <select  id="selecter" onchange="sortInfo()">
+      <option value="">sort by Name</option>
+      <option value="ascending">ascending</option>
+      <option value="descending">descending</option>
+    </select>
+    <select name="filter" id="filters" onchange="filterByRole()">
+      <option value="">filter by role</option>
+      <option value="Backend">Backend</option>
+      <option value="Frontend">Frontend</option>
+      <option value="FSD">FSD</option>
+    </select>
+    <select name="filter" id="filtered" onchange="filterBySalary()">
+      <option value="">filter by salary</option>
+      <option value="10">10</option>
+      <option value="20">20</option>
+     
+    </select>
+
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    let user=JSON.parse(localStorage.getItem("objInfo"));
+    let bookMarkArr=JSON.parse(localStorage.getItem("bookMark"))||[];
+    display(user);
+
+    function display(obj){
+    document.querySelector("tbody").innerHTML="";
+    obj.forEach(function (elem,index){
+    let row=document.createElement("tr");
+    let col1=document.createElement("td");
+    col1.innerText=elem.name;
+    let col2=document.createElement("td");
+    col2.innerText=elem.email;
+    let col3=document.createElement("td");
+    col3.innerText=elem.role;
+    let col4=document.createElement("td");
+    col4.innerText=elem.sal;
+    let col5=document.createElement("td");
+    col5.innerText="Bookmark";
+    col5.style.backgroundColor="red";
+    col5.addEventListener("click",function(){
+      mark(elem,index);
+    })
+    row.append(col1,col2,col3,col4,col5)
+    document.querySelector("tbody").append(row)
+   })
+}
+function mark(el,index){
+  console.log(el);
+  bookMarkArr.push(el)
+  localStorage.setItem("bookMark",JSON.stringify(bookMarkArr));
+  user.splice(index,1);
+  localStorage.setItem("objInfo",JSON.stringify(user));
+  window.location.reload()
+
+}
+function sortInfo(){
+  let selected=document.querySelector("#selecter").value;
+  if(selected=="ascending"){
+    console.log(user)
+    user.sort(function(a,b){
+      if(a.name>b.name) return 1;
+      if(a.name<b.name) return -1;
+      return 0;
+
+    })
+    display(user)
+
+  }if(selected=="descending") {
+    console.log(user)
+    user.sort(function(a,b){
+      if(a.name<b.name) return 1;
+      if(a.name>b.name) return -1;
+      return 0;
+
+    })
+    display(user)
+  }
+}
+function filterByRole(){
+  let filtered=document.querySelector("#filters").value;
+  let list= user.filter(function(elem){
+     return elem.role==filtered;
+  })
+  display(list)
+}
+function filterBySalary(){
+  let salaryFilter=document.querySelector("#filtered").value;
+  let sal=user.filter(function(elem){
+    return +elem.sal>=salaryFilter;
+  })
+   display(sal);
+}
+  </script>
+</html>
